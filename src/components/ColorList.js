@@ -1,5 +1,8 @@
 import React from "react";
 
+import ColorItem from "./ColorItem";
+
+
 function ColorList() {
   const colors = [
     "firebrick",
@@ -25,18 +28,26 @@ function ColorList() {
 
 
   const colorElements = colors.map((color) => {
-    return <li style={{ color: color }}>{color}</li>;
+    return <li key={color} style={{color: color }}>{color}</li>;
   });
   return (
     <div>
       <h1>Top 5 CSS Colors</h1>
       <ol>
-        {/* display the array of <li> elements here! */}
+       {/* display the array of <li> elements here! */}
         {colorElements}
       </ol>
     </div>
-  );
+  ); 
 
+
+
+  
+  // const colorElements = colors.map((color) => {
+  //   return <ColorItem key={color} color={color} />;
+  // });
 }
+
+
 
 export default ColorList;
